@@ -1,0 +1,14 @@
+{
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "2.0.*",
+        "zephir/luya" : "*",
+        "zephir/luya-module-cms" : "*",
+        "zephir/luya-module-cmsadmin" : "*",
+        "zephir/luya-module-admin" : "*"
+    },
+    "config": {
+        "process-timeout": 1800
+    }
+}
