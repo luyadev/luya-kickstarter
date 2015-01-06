@@ -1,4 +1,9 @@
 {
+    "name": "zephir/luya-kickstarter",
+    "description": "The kickstarter for a new luya project.",
+    "type": "project",
+    "minimum-stability": "dev",
+    "license":"MIT",
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
