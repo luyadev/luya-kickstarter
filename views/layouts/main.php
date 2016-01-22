@@ -43,16 +43,16 @@
                     <ul>
                     <?php foreach (Yii::$app->menu->find()->where(['parent_nav_id' => 0, 'container' => 'default'])->all() as $item): ?>
                         <li>
-                            <a<?php if ($item->isActive): ?> class="active"<?endif;?> href="<?= $item->link; ?>"><?= $item->title; ?></a>
+                            <a<?php if ($item->isActive): ?> class="active"<?php endif;?> href="<?= $item->link; ?>"><?= $item->title; ?></a>
                             <?php if ($item->hasChildren()): ?>
                             <ul>
                                 <?php foreach ($item->children as $child): ?>
-                                    <li><a<?php if ($child->isActive): ?> class="active"<?endif;?> href="<?= $child->link; ?>">&raquo; <?= $child->title; ?></a></li>
+                                    <li><a<?php if ($child->isActive): ?> class="active"<?php endif;?> href="<?= $child->link; ?>">&raquo; <?= $child->title; ?></a></li>
                                     
                                     <?php if ($child->hasChildren()): ?>
                                     <ul>
                                         <?php foreach ($child->children as $grandChild): ?>
-                                            <li><a<?php if ($grandChild->isActive): ?> class="active"<?endif;?> href="<?= $grandChild->link; ?>">&raquo; <?= $grandChild->title; ?></a>
+                                            <li><a<?php if ($grandChild->isActive): ?> class="active"<?php endif;?> href="<?= $grandChild->link; ?>">&raquo; <?= $grandChild->title; ?></a>
                                         <?php endforeach; ?>
                                     </ul>
                                     <?php endif; ?>
