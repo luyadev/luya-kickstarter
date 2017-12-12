@@ -7,6 +7,7 @@
 [![LUYA](https://img.shields.io/badge/Powered%20by-LUYA-brightgreen.svg)](https://luya.io)
 [![Total Downloads](https://poser.pugx.org/luyadev/luya-kickstarter/downloads)](https://packagist.org/packages/luyadev/luya-kickstarter)
 [![License](https://poser.pugx.org/luyadev/luya-kickstarter/license)](https://packagist.org/packages/luyadev/luya-kickstarter)
+[![Slack Support](https://img.shields.io/badge/Slack-luyadev-yellowgreen.svg)](https://slack.luya.io/)
 
 
 [LUYA](https://github.com/luyadev/luya) is a [Yii 2 PHP Framework](https://github.com/yiisoft/yii2) wrapper which provides out of the box functions like an **administration interface**, a beautiful looking **content management system**, **payment** modules, **agency workflows** and other tools to develop your website pretty fast!
