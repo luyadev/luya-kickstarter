@@ -1,40 +1,36 @@
-## Step 1
-### Start Docker
+# Docker Quickstart
+:rocket:
+
+## :one:
+#### Start Docker
+
+*This takes about 5-10 Minutes*
+
 ```
 docker-compose up
 ```
 
-## Step 2
+## :two:
 
-### Migrate (Non Interactive)
-```
-docker exec -t docker_luya_php_1 luya migrate --interactive=0
-```
+### Migrate Database
 
-### Migrate (Interactive)
+| Non Interactive | Interactive |
+| --- | --- |
+| `docker exec -t docker_luya_php_1 luya migrate --interactive=0` | `docker exec -ti docker_luya_php_1 luya migrate` |
 
-```
-docker exec -ti docker_luya_php_1 luya migrate
-```
+## :three:
 
-## Step 3
+### Import Dependencies
 
-### Import
-```
-docker exec -t docker_luya_php_1 luya import
-```
+| Non Interactive |
+| --- |
+| `docker exec -t docker_luya_php_1 luya import` |
 
-
-## Step 4
+## :four:
 
 ### Setup (Non Interactive)
-```
-docker exec -t docker_luya_php_1 luya admin/setup --email=foo@bar.com --password=test --firstname=John --lastname=Doe --interactive=0
 
-```
+| Non Interactive | Interactive |
+| --- | --- |
+| `docker exec -t docker_luya_php_1 luya admin/setup --email=foo@bar.com --password=test --firstname=John --lastname=Doe --interactive=0` | `docker exec -ti docker_luya_php_1 luya admin/setup` |
 
-### Setup (Interactive)
-```
-docker exec -ti docker_luya_php_1 luya admin/setup
-
-```
