@@ -21,7 +21,7 @@ docker exec -ti docker_luya_php_1 luya migrate
 
 ### Import
 ```
-`docker exec -t docker_luya_php_1 luya import`
+docker exec -t docker_luya_php_1 luya import
 ```
 
 
