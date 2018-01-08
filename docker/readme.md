@@ -28,7 +28,7 @@ docker-compose up
 
 ## :four:
 
-### Setup (Non Interactive)
+### Account Setup
 
 | Non Interactive | Interactive |
 | --- | --- |
