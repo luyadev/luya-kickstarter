@@ -2,7 +2,10 @@ version: '2'
 
 services:
   luya_composer:
-    build: ./composer
+    build:
+      context: ./composer
+      args:
+       GITHUB_TOKEN: "INSERT GITHUB TOKEN HERE"
     volumes:
       - ../:/app
       - ./env.php:/app/configs/env.php
