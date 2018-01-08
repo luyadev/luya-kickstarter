@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  luya_composer:
+    build: ./composer
+    volumes:
+      - ../:/app
+      - ./env.php:/app/configs/env.php
+      - ./env-local-db.php:/app/configs/env-local-db.php
+    command: composer install
+  luya_php:
+    build: ./luya
+    volumes:
+      - ../:/app
+      - ./env.php:/app/configs/env.php
+      - ./env-local-db.php:/app/configs/env-local-db.php
+  luya_db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: CHANGE_ME
+      MYSQL_DATABASE: luya
+      MYSQL_USER: luya
+      MYSQL_PASSWORD: CHANGE_ME
+  luya_web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ../:/app
+      - ./env.php:/app/configs/env.php
+      - ./env-local-db.php:/app/configs/env-local-db.php
+      - ./site.conf:/etc/nginx/conf.d/default.conf
