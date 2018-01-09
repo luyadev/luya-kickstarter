@@ -9,13 +9,8 @@ class ResourcesAsset extends \luya\web\Asset
 {
     public $sourcePath = '@app/resources';
     
-    public $js = [
-        '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',
-    ];
-    
     public $css = [
-        '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-        '//fonts.googleapis.com/css?family=Open+Sans:300,400,600',
+        '//fonts.googleapis.com/css?family=Roboto:100,300,400',
         '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
         'css/style.css'
     ];
@@ -25,9 +20,5 @@ class ResourcesAsset extends \luya\web\Asset
             'css/*',
             'js/*',
         ]
-    ];
-    
-    public $depends = [
-        'yii\web\JqueryAsset',
     ];
 }
