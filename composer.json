@@ -32,11 +32,8 @@
 		},
         "branch-alias": {
             "dev-master": "1.0.x-dev"
-        },
-        "asset-pattern-skip-version": "(-build|-patch)",
-        "asset-installer-paths": {
-            "bower-asset-library": "vendor/bower"
         }
+
     },
     "config": {
         "fxp-asset" : {
@@ -44,6 +41,6 @@
              "installer-paths": {
                 "bower-asset-library": "vendor/bower"
             }
-        }   
+        }
     }
 }

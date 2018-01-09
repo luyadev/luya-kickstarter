@@ -24,3 +24,5 @@ composer.phar
 .buildpath
 .project
 .settings
+
+composer.lock
