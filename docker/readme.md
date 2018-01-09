@@ -2,41 +2,33 @@
 :rocket:
 
 ## :one:
-#### Start Docker
+#### Prerequisite
 
-*This takes about 5-10 Minutes*
+**Add your Github Token in docker-compose.yml**
+
+## :two:
+#### Start Docker
 
 ```
 docker-compose up
 ```
 
-## :two:
+**Composer needs 5-10 Minutes**  
 
-### Migrate Database
-
-| Non Interactive | Interactive |
-| --- | --- |
-| `docker exec -t docker_luya_php_1 luya migrate --interactive=0` | `docker exec -ti docker_luya_php_1 luya migrate` |
+Wait until `docker_luya_composer_1 exited with code 0`
 
 ## :three:
 
-### Import Dependencies
+### Setup Luya
 
-| Non Interactive |
-| --- |
-| `docker exec -t docker_luya_php_1 luya import` |
+```
+docker-compose run luya_php setup
+```
 
-## :four:
 
-### Account Setup
+## :heart:
 
-| Non Interactive | Interactive |
-| --- | --- |
-| `docker exec -t docker_luya_php_1 luya admin/setup --email=foo@bar.com --password=test --firstname=John --lastname=Doe --interactive=0` | `docker exec -ti docker_luya_php_1 luya admin/setup` |
-
-## :five:
-
-Check http://localhost:8080
+Login http://localhost:8080 with E-Mail `admin@admin.com` Password `admin`
 
 
 ## Docker Containers
