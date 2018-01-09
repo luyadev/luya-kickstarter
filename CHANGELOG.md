@@ -4,11 +4,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 1.0.1 (in progress)
 
-- [#7](https://github.com/luyadev/luya-kickstarter/pull/7) Update kickstarter style a little bit in general.
-- [#7](https://github.com/luyadev/luya-kickstarter/pull/7) Change to Roboto font.
-- [#7](https://github.com/luyadev/luya-kickstarter/pull/7) Replace bs3 jumbotron with card.
-- [#7](https://github.com/luyadev/luya-kickstarter/pull/7) adding favicon.
-- [#7](https://github.com/luyadev/luya-kickstarter/pull/7) adding the new LUYA logo.
+- [#7](https://github.com/luyadev/luya-kickstarter/pull/7) Update kickstarter style a little bit in general (Change to Roboto font, Replace bs3 jumbotron with card, adding favicon, adding the new LUYA logo).
 
 ## 1.0.0 (12. December 2017)
 
