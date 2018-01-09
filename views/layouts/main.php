@@ -5,7 +5,6 @@ use luya\helpers\Url;
 use luya\cms\widgets\LangSwitcher;
 
 ResourcesAsset::register($this);
-BootstrapAsset::register($this);
 
 /* @var $this luya\web\View */
 /* @var $content string */
@@ -34,9 +33,8 @@ $this->beginPage();
     </head>
     <body>
     <?php $this->beginBody() ?>
-    <div class="nav-container bg-light mb-3">
-        <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light px-0 py-2">
+    <div class="nav-container bg-light m-b-3">
+        <!-- bs4 navbar <nav class="navbar navbar-expand-lg navbar-light bg-light px-0 py-2">
             <a class="navbar-brand" href="<?= $this->publicHtml; ?>">
                 <img alt="luya.io-kickstarter" src="<?= $this->publicHtml; ?>/images/logo/0.2x/luya_logo@0.2x.png" height="20px" width="auto">
             </a>
@@ -58,8 +56,44 @@ $this->beginPage();
                     }
                 ]); ?>
             </div>
-        </nav>
-    </div>
+        </nav> end of bs4 navbar -->
+
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="<?= $this->publicHtml; ?>">
+                            <img alt="luya.io-kickstarter" src="<?= $this->publicHtml; ?>/images/logo/0.2x/luya_logo@0.2x.png" height="20px" width="auto">
+                        </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <?php foreach (Yii::$app->menu->findAll(['depth' => 1, 'container' => 'default']) as $item): /* @var $item \luya\cms\menu\Item */ ?>
+                                <li class="nav-item<?= $item->isActive ? ' active' : '' ?>">
+                                    <a class="nav-link" href="<?= $item->link; ?>"><?= $item->title; ?></a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+
+                        <?= LangSwitcher::widget([
+                            'listElementOptions' => ['class' => 'nav navbar-nav navbar-right'],
+                            'elementOptions' => ['class' => 'nav-item'],
+                            'linkOptions' => ['class' => 'nav-link'],
+                            'linkLabel' => function ($lang) {
+                                return strtoupper($lang['short_code']);
+                            }
+                        ]); ?>
+
+                    </div><!-- /.navbar-collapse -->
+                </div>
+            </nav>
     </div>
     <div class="container">
         <nav aria-label="breadcrumb mb-3">

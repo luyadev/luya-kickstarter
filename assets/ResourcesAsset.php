@@ -12,7 +12,13 @@ class ResourcesAsset extends \luya\web\Asset
     public $css = [
         '//fonts.googleapis.com/css?family=Roboto:100,300,400',
         '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
+        '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
         'css/style.css'
+    ];
+
+    public $js = [
+        '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js',
+        '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
     ];
     
     public $publishOptions = [
@@ -20,5 +26,10 @@ class ResourcesAsset extends \luya\web\Asset
             'css/*',
             'js/*',
         ]
+    ];
+
+
+    public $depends = [
+        'yii\web\JqueryAsset',
     ];
 }

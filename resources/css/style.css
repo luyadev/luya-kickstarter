@@ -7,7 +7,6 @@ html {
   min-height: 100%;
 }
 
-
 nav .btn {
     list-style: none;
 }
@@ -17,7 +16,7 @@ nav .btn a {
     text-decoration: none;
 }
 
-.navbar-light .navbar-nav .active>.nav-link {
+.nav-item.active>.nav-link {
     color: #A50045 !important;
 }
 
