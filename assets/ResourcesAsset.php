@@ -17,7 +17,6 @@ class ResourcesAsset extends \luya\web\Asset
     ];
 
     public $js = [
-        '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js',
         '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
     ];
     
