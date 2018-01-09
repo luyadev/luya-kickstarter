@@ -1,6 +1,5 @@
 <?php
 use app\assets\ResourcesAsset;
-use app\assets\BootstrapAsset;
 use luya\helpers\Url;
 use luya\cms\widgets\LangSwitcher;
 
@@ -21,12 +20,11 @@ $this->beginPage();
         <meta property="og:title" content="LUYA - Build any system" />
         <meta property="og:image" content="<?= $this->publicHtml ?>/images/logo/2x/luya_logo@2x-100.jpg" />
         <meta property=“og:type“ content=“website“/>
-        <link rel="apple-touch-icon" sizes="180x180" href="<?= $this->publicHtml ?>/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="<?= $this->publicHtml ?>/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="<?= $this->publicHtml ?>/favicon-16x16.png">
-        <link rel="manifest" href="<?= $this->publicHtml ?>/manifest.json">
-        <link rel="mask-icon" href="<?= $this->publicHtml ?>/safari-pinned-tab.svg" color="#A50045">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="<?= $this->publicHtml ?>/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="<?= $this->publicHtml ?>/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?= $this->publicHtml ?>/favicon/favicon-16x16.png">
+        <link rel="manifest" href="<?= $this->publicHtml ?>/favicon/manifest.json">
+        <link rel="mask-icon" href="<?= $this->publicHtml ?>/favicon/safari-pinned-tab.svg" color="#A50045">
         <meta name="theme-color" content="#A50045">
         <title><?= $this->title; ?></title>
         <?php $this->head() ?>
@@ -58,42 +56,42 @@ $this->beginPage();
             </div>
         </nav> end of bs4 navbar -->
 
-            <nav class="navbar navbar-default">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="<?= $this->publicHtml; ?>">
-                            <img alt="luya.io-kickstarter" src="<?= $this->publicHtml; ?>/images/logo/0.2x/luya_logo@0.2x.png" height="20px" width="auto">
-                        </a>
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <?php foreach (Yii::$app->menu->findAll(['depth' => 1, 'container' => 'default']) as $item): /* @var $item \luya\cms\menu\Item */ ?>
-                                <li class="nav-item<?= $item->isActive ? ' active' : '' ?>">
-                                    <a class="nav-link" href="<?= $item->link; ?>"><?= $item->title; ?></a>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-
-                        <?= LangSwitcher::widget([
-                            'listElementOptions' => ['class' => 'nav navbar-nav navbar-right'],
-                            'elementOptions' => ['class' => 'nav-item'],
-                            'linkOptions' => ['class' => 'nav-link'],
-                            'linkLabel' => function ($lang) {
-                                return strtoupper($lang['short_code']);
-                            }
-                        ]); ?>
-
-                    </div><!-- /.navbar-collapse -->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="<?= $this->publicHtml; ?>">
+                        <img alt="luya.io-kickstarter" src="<?= $this->publicHtml; ?>/images/logo/0.2x/luya_logo@0.2x.png" height="20px" width="auto">
+                    </a>
                 </div>
-            </nav>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <?php foreach (Yii::$app->menu->findAll(['depth' => 1, 'container' => 'default']) as $item): /* @var $item \luya\cms\menu\Item */ ?>
+                            <li class="nav-item<?= $item->isActive ? ' active' : '' ?>">
+                                <a class="nav-link" href="<?= $item->link; ?>"><?= $item->title; ?></a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+
+                    <?= LangSwitcher::widget([
+                        'listElementOptions' => ['class' => 'nav navbar-nav navbar-right'],
+                        'elementOptions' => ['class' => 'nav-item'],
+                        'linkOptions' => ['class' => 'nav-link'],
+                        'linkLabel' => function ($lang) {
+                            return strtoupper($lang['short_code']);
+                        }
+                    ]); ?>
+
+                </div><!-- /.navbar-collapse -->
+            </div>
+        </nav>
     </div>
     <div class="container">
         <nav aria-label="breadcrumb mb-3">
