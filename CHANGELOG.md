@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 1.0.1 (in progress)
 
-- [#11](https://github.com/luyadev/luya-kickstarter/pull/11) Introduce .env.dist for docker-compose to store sensitive data such as Github token.
+- [#12](https://github.com/luyadev/luya-kickstarter/pull/12) Introduce .env.dist for docker-compose to store sensitive data such as Github token.
 - [#9](https://github.com/luyadev/luya-kickstarter/pull/9) Remove not important  "import" notice after install.
 - [#7](https://github.com/luyadev/luya-kickstarter/pull/7) Update kickstarter style a little bit in general (Change to Roboto font, Replace bs3 jumbotron with card, adding favicon, adding the new LUYA logo).
 - [#6](https://github.com/luyadev/luya-kickstarter/issues/6) Added Docker Support (Development only).
