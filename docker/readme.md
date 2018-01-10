@@ -4,7 +4,7 @@
 ## :one:
 #### Prerequisite
 
-**Add your Github Token in docker-compose.yml**
+**Copy .env.dist to .env and add your Github Token in .env**
 
 ## :two:
 #### Start Docker
