@@ -4,13 +4,13 @@
 
 # Docker Quickstart
 
-:one: Build Docker Image "luya_composer"
+### :one: Build Docker Image "luya_composer"
 
 ```sh
 docker-compose build --build-arg GITHUB_TOKEN=token luya_composer
 ```
 
-:two: Start Docker
+### :two: Start Docker
 
 Starting the docker container, this can take up to 10 minutes.
 
@@ -22,7 +22,7 @@ docker-compose up
 
 Wait until `docker_luya_composer_1 exited with code 0`
 
-:three: Setup LUYA
+### :three: Setup LUYA
 
 The last command will run the common LUYA commands and initialize a default admin user. 
 
