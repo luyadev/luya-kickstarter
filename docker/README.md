@@ -10,6 +10,26 @@
 docker-compose build --build-arg GITHUB_TOKEN=token luya_composer
 ```
 
+**Or Alternatively store Github token locally**
+
+If you prefer to store the Github token in a file you could do the following and skip step 1:
+
+- create `.env` file inside `docker/` folder 
+- define a variable in `.env` e.g. like this: `GIT_TOKEN=ADD_YOUR_SECRET_TOKEN_HERE`
+- add the variable to the build args in your `docker-compose.yml` (at line 7 probably) like this:
+
+```shell
+
+services:
+   luya_composer:
+     build:
+       context: ./composer
+       args:
+        GITHUB_TOKEN: ${GITHUB_TOKEN}
+```
+
+> This could be useful if you rebuild or change your image, so it is not required to generate a new one upon rebuild. **Important** .env should newer be exposed to your VCS.
+
 ### :two: Start Docker
 
 Starting the docker container, this can take up to 10 minutes.
