@@ -2,9 +2,11 @@
 :rocket:
 
 ## :one:
-#### Prerequisite
+#### Build Docker Image "luya_composer"
 
-**Add your Github Token in docker-compose.yml**
+```
+docker-compose build --build-arg GITHUB_TOKEN=token luya_composer
+```
 
 ## :two:
 #### Start Docker
