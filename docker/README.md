@@ -1,36 +1,36 @@
+<p align="center">
+  <img src="https://www.docker.com/sites/default/files/vertical_large.png" height="89" alt="LUYA Logo"/><img src="https://raw.githubusercontent.com/luyadev/luya/master/docs/logo/luya-logo-0.2x.png" alt="LUYA Logo"/>
+</p>
+
 # Docker Quickstart
-:rocket:
 
-## :one:
-#### Build Docker Image "luya_composer"
+:one: Build Docker Image "luya_composer"
 
-```
+```sh
 docker-compose build --build-arg GITHUB_TOKEN=token luya_composer
 ```
 
-## :two:
-#### Start Docker
+:two: Start Docker
 
-```
+Starting the docker container, this can take up to 10 minutes.
+
+```sh
 docker-compose up
 ```
 
-**Composer needs 5-10 Minutes**  
+> After building the docker image from step 1, just the `docker-composer up` command must be run in future.
 
 Wait until `docker_luya_composer_1 exited with code 0`
 
-## :three:
+:three: Setup LUYA
 
-### Setup Luya
+The last command will run the common LUYA commands and initialize a default admin user. 
 
-```
+```sh
 docker-compose run luya_php setup
 ```
 
-
-## :heart:
-
-Login http://localhost:8080 with E-Mail `admin@admin.com` Password `admin`
+You'r done, you can now login at http://localhost:8080 with E-Mail `admin@admin.com` Password `admin`
 
 
 ## Docker Containers
@@ -50,4 +50,12 @@ Use Composer from the Docker-Container to install and update:
 cd /to/your/luya-kickstarter/docker
 docker-compose run luya_composer install
 docker-compose run luya_composer update
+```
+
+## Console commands
+
+In order to run console commands like `migrate`, `import` or your custom commands use:
+
+```sh
+docker-compose run -ti luya_php luya <command>
 ```
