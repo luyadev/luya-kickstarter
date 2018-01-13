@@ -32,30 +32,6 @@ $this->beginPage();
     <body>
     <?php $this->beginBody() ?>
     <div class="nav-container bg-light m-b-3">
-        <!-- bs4 navbar <nav class="navbar navbar-expand-lg navbar-light bg-light px-0 py-2">
-            <a class="navbar-brand" href="<?= $this->publicHtml; ?>">
-                <img alt="luya.io-kickstarter" src="<?= $this->publicHtml; ?>/images/logo/0.2x/luya_logo@0.2x.png" height="20px" width="auto">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <?php foreach (Yii::$app->menu->findAll(['depth' => 1, 'container' => 'default']) as $item): /* @var $item \luya\cms\menu\Item */ ?>
-                        <li class="nav-item<?= $item->isActive ? ' active' : '' ?>">
-                            <a class="nav-link" href="<?= $item->link; ?>"><?= $item->title; ?></a>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-                <?= LangSwitcher::widget([
-                    'listElementOptions' => ['class' => 'btn btn-outline-success my-2 my-sm-0'],
-                    'linkLabel' => function ($lang) {
-                        return strtoupper($lang['short_code']);
-                    }
-                ]); ?>
-            </div>
-        </nav> end of bs4 navbar -->
-
         <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
