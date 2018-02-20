@@ -15,8 +15,8 @@ docker-compose build --build-arg GITHUB_TOKEN=token luya_composer
 If you prefer to store the Github token in a file you could do the following and skip step 1:
 
 - create `.env` file inside `docker/` folder 
-- define a variable in `.env` e.g. like this: `GIT_TOKEN=ADD_YOUR_SECRET_TOKEN_HERE`
-- add the variable to the build args in your `docker-compose.yml` (at line 7 probably) like this:
+- define a variable in `.env` e.g. like this: `GITHUB_TOKEN=ADD_YOUR_SECRET_TOKEN_HERE`
+- add the variable to the build args in your `docker-compose.yml` like this:
 
 ```shell
 
