@@ -8,7 +8,7 @@
 
 ### :one: Provide env config
 
-Rename the `.env.dist` file to `.env` and add your github access token. This is used for composer cause it will reach the api rate limit. In order to get your access token go to: https://github.com/settings/tokens
+Rename the `.env.dist` file to `.env` and add your github access token. This is used for composer cause it will reach the api rate limit. In order to get your access token go to: [https://github.com/settings/tokens](https://github.com/settings/tokens/new?description=luya_kickstarter_docker_token)
 
 > **Important** .env should newer be exposed to your VCS.
 
