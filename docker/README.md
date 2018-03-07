@@ -4,6 +4,8 @@
 
 # Docker Quickstart
 
+**Keep in mind this dockerized LUYA setup is only for development and not for production env!**
+
 ### :one: Provide env config
 
 Rename the `.env.dist` file to `.env` and add your github access token. This is used for composer cause it will reach the api rate limit. In order to get your access token go to: https://github.com/settings/tokens
