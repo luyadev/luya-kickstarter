@@ -40,16 +40,17 @@ You'r done, you can now login at http://localhost:8080 with E-Mail `admin@admin.
 
 ## Docker Containers and Port forwarding
 
-| ID | What For | Listening Ports |
-| --- | --- | --- |
-| docker_luya_composer_1 | Installs Composer Dependencies each time "fired-up" | - |
-| docker_luya_php_1 | Handles PHP Requests as FPM and you can use it as `luya` Command-Proxy | 9000 |
-| docker_luya_web_1 | Handles Web Requests (Nginx) | 8080 :arrow_right: 80 |
-| docker_luya_db_1 | MySQL Database | 3306 |
+|ID|What for|Listening ports|
+|---|---|---|
+|docker_luya_composer_1|Installs Composer Dependencies each time "fired-up"|-|
+|docker_luya_php_1|Handles PHP Requests as FPM and you can use it as `luya` Command-Proxy|9000|
+|docker_luya_web_1|Handles Web Requests (Nginx)|8080 :arrow_right: 80|
+|docker_luya_db_1|MySQL Database|3306|
 
 ## General Docker infos
 
-|command|info
+|Command|What it does
+|---|---
 |docker-composer down|This will shutdown/destroy all containers (including the databse)
 |docker-compose build|This will freshly build the docker image from the yml file. So assuming you make changes in the yml file you have to run down and run build again.
 |docker-composer up|This will serve the docker container so you can access trough web browser.
@@ -58,7 +59,7 @@ You'r done, you can now login at http://localhost:8080 with E-Mail `admin@admin.
 
 Use Composer from the Docker-Container to install and update:
 
-```
+```sh
 cd /to/your/luya-kickstarter/docker
 docker-compose run luya_composer install
 docker-compose run luya_composer update
