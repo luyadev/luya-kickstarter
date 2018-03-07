@@ -79,5 +79,7 @@ docker-compose run luya_composer update
 In order to run console commands like `migrate`, `import` or your custom commands use:
 
 ```sh
-docker-compose run -ti luya_php luya <command>
+docker-compose run -T luya_php luya <command>
 ```
+
+> maybe in older versions its `-ti` instead of `-T`
