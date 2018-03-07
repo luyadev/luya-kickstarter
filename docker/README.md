@@ -6,6 +6,8 @@
 
 ### :one: Build Docker Image "luya_composer"
 
+In order to get your access token go to: https://github.com/settings/tokens
+
 ```sh
 docker-compose build --build-arg GITHUB_TOKEN=token luya_composer
 ```
