@@ -10,13 +10,13 @@ Rename the `.env.dist` file to `.env` and add your github access token. This is 
 
 > **Important** .env should newer be exposed to your VCS.
 
-### :one: Build Docker Image "luya_composer"
+### :two: Build Docker Image "luya_composer"
 
 ```sh
 docker-compose build
 ```
 
-### :two: Start Docker
+### :three: Start Docker
 
 Starting the docker container, this can take up to 10 minutes.
 
@@ -28,7 +28,7 @@ docker-compose up
 
 Wait until `docker_luya_composer_1 exited with code 0`
 
-### :three: Setup LUYA
+### :four: Setup LUYA
 
 The last command will run the common LUYA commands and initialize a default admin user. 
 
