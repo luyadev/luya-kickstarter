@@ -4,33 +4,17 @@
 
 # Docker Quickstart
 
+### :one: Provide env config
+
+Rename the `.env.dist` file to `.env` and add your github access token. This is used for composer cause it will reach the api rate limit. In order to get your access token go to: https://github.com/settings/tokens
+
+> **Important** .env should newer be exposed to your VCS.
+
 ### :one: Build Docker Image "luya_composer"
 
-In order to get your access token go to: https://github.com/settings/tokens
-
 ```sh
-docker-compose build --build-arg GITHUB_TOKEN=token luya_composer
+docker-compose build
 ```
-
-**Or Alternatively store Github token locally**
-
-If you prefer to store the Github token in a file you could do the following and skip step 1:
-
-- create `.env` file inside `docker/` folder 
-- define a variable in `.env` e.g. like this: `GITHUB_TOKEN=ADD_YOUR_SECRET_TOKEN_HERE`
-- add the variable to the build args in your `docker-compose.yml` like this:
-
-```shell
-
-services:
-   luya_composer:
-     build:
-       context: ./composer
-       args:
-        GITHUB_TOKEN: ${GITHUB_TOKEN}
-```
-
-> This could be useful if you rebuild or change your image, so it is not required to generate a new one upon rebuild. **Important** .env should newer be exposed to your VCS.
 
 ### :two: Start Docker
 
