@@ -56,6 +56,8 @@ You'r done, you can now login at http://localhost:8080 with E-Mail `admin@admin.
 |docker-composer down|This will shutdown/destroy all containers (including the databse)
 |docker-compose build|This will freshly build the docker image from the yml file. So assuming you make changes in the yml file you have to run down and run build again.
 |docker-composer up|This will serve the docker container so you can access trough web browser.
+|docker-composer run|Starts the provided container.
+|docker-composer exec|Execute a command in a running container.
 
 ## Composer
 
@@ -72,7 +74,7 @@ docker-compose run luya_composer update
 In order to run console commands like `migrate`, `import` or your custom commands use:
 
 ```sh
-docker-compose run -T luya_php luya <command>
+docker-compose exec -T luya_php luya <command>
 ```
 
 > maybe in older versions its `-ti` instead of `-T`
