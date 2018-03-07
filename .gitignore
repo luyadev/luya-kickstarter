@@ -5,6 +5,8 @@
 /luya
 composer.phar
 .DS_Store
+.env
+/docker/.env
 
 # project config
 /configs/env-local-db.php
