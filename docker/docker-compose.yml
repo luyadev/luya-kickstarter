@@ -4,6 +4,8 @@ services:
   luya_composer:
     build:
       context: ./composer
+      args:
+        GITHUB_TOKEN: ${GITHUB_TOKEN}
     volumes:
       - ../:/app
       - ./env.php:/app/configs/env.php
