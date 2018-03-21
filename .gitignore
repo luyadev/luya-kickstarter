@@ -7,6 +7,7 @@ composer.phar
 .DS_Store
 .env
 /docker/.env
+/.env
 
 # project config
 /configs/env-local-db.php
