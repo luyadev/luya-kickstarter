@@ -8,6 +8,8 @@
 
 ### :one: Provide env config
 
+> The docker commands have to be run in the root folder where the `docker-compose.yml` file is located.
+
 Rename the `.env.dist` file to `.env` and add your github access token. This is used for composer cause it will reach the api rate limit. In order to get your access token go to: [https://github.com/settings/tokens](https://github.com/settings/tokens/new?description=luya_kickstarter_docker_token&scopes=repo)
 
 > **Important** .env should newer be exposed to your VCS.
