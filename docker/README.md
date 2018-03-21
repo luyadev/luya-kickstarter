@@ -66,10 +66,10 @@ You'r done, you can now login at http://localhost:8080 with E-Mail `admin@admin.
 Use Composer from the Docker-Container to install and update:
 
 ```sh
-cd /to/your/luya-kickstarter/docker
-docker-compose run luya_composer install
-docker-compose run luya_composer update
+docker-compose run luya_composer <composer_command>
 ```
+
+An example *composer_command* could be `install`, `update` or `dump-autoload``
 
 ## Console commands
 
