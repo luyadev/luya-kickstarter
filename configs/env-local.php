@@ -7,7 +7,7 @@
 
 /*
  * Enable or disable the debugging, if those values are deleted YII_DEBUG is false and YII_ENV is prod.
- * The YII_ENV value will also be used to load assets based on enviroment (see assets/ResourcesAsset.php)
+ * The YII_ENV value will also be used to load assets based on environment (see assets/ResourcesAsset.php)
  */
 defined('YII_ENV') or define('YII_ENV', 'local');
 defined('YII_DEBUG') or define('YII_DEBUG', true);
@@ -37,7 +37,7 @@ $config = [
          * a lot of functionality, like storage, user, permission, crud, etc. But the basic concept of LUYA is also that you can use LUYA without the
          * admin module.
          *
-         * @secureLogin: (boolean) This will activate a two-way authentification method where u get a token sent by mail, for this feature
+         * @secureLogin: (boolean) This will activate a two-way authentication method where u get a token sent by mail, for this feature
          * you have to make sure the mail component is configured correctly. You can test this with console command `./vendor/bin/luya health/mailer`.
          */
         'admin' => [
@@ -82,7 +82,7 @@ $config = [
          */
         'composition' => [
             'hidden' => true, // no languages in your url (most case for pages which are not multi lingual)
-            'default' => ['langShortCode' => 'en'], // the default language for the composition should match your default language shortCode in the langauge table.
+            'default' => ['langShortCode' => 'en'], // the default language for the composition should match your default language shortCode in the language table.
         ],
         /*
          * If cache is enabled LUYA will cache cms blocks and speed up the system in different ways. In the prep config
@@ -115,6 +115,5 @@ if (YII_DEBUG) {
     $config['modules']['gii'] = 'yii\gii\Module';
 }
 */
-
 
 return \yii\helpers\ArrayHelper::merge($config, require('env-local-db.php'));

@@ -36,8 +36,6 @@ $this->beginPage();
                         <img alt="luya.io-kickstarter" src="<?= $this->publicHtml; ?>/images/logo/0.2x/luya_logo@0.2x.png" height="20px" width="auto">
                     </a>
                 </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <?php foreach (Yii::$app->menu->findAll(['depth' => 1, 'container' => 'default']) as $item): /* @var $item \luya\cms\menu\Item */ ?>
@@ -46,7 +44,6 @@ $this->beginPage();
                             </li>
                         <?php endforeach; ?>
                     </ul>
-
                     <?= LangSwitcher::widget([
                         'listElementOptions' => ['class' => 'nav navbar-nav navbar-right'],
                         'elementOptions' => ['class' => 'nav-item'],
@@ -55,8 +52,7 @@ $this->beginPage();
                             return strtoupper($lang['short_code']);
                         }
                     ]); ?>
-
-                </div><!-- /.navbar-collapse -->
+                </div>
             </div>
         </nav>
     </div>
