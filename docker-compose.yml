@@ -24,7 +24,7 @@ services:
       - --collation-server=utf8_general_ci
     environment:
       MYSQL_ROOT_PASSWORD: CHANGE_ME
-      MYSQL_DATABASE: luya_env_dev
+      MYSQL_DATABASE: luya_kickstarter_110
       MYSQL_USER: luya
       MYSQL_PASSWORD: CHANGE_ME
   luya_web:
