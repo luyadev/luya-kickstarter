@@ -4,7 +4,7 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=luya_db;dbname=luya_kickstarter_110',
+            'dsn' => 'mysql:host=luya_db;dbname=luya_kickstarter_101',
             'username' => 'luya',
             'password' => 'CHANGE_ME',
             'charset' => 'utf8',
