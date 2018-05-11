@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 1.0.2 (in progress)
 
++ [#24](https://github.com/luyadev/luya-kickstarter/issues/24) Switch back to 1.0 testsuite.
 + Added custom php.ini file (custom.ini) to docker basic setup in order to increase memory_limit.
 
 ## 1.0.1.1 (27. March 2018)
