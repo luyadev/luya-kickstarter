@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. This project make usage of the [Yii Versioning Strategy](https://github.com/yiisoft/yii2/blob/master/docs/internals/versions.md). In order to read more about upgrading and BC breaks have a look at the [UPGRADE Document](UPGRADE.md).
 
-## 1.0.2 (in progress)
+## 1.0.2 (15. May 2018)
 
 + [#24](https://github.com/luyadev/luya-kickstarter/issues/24) Switch back to 1.0 testsuite.
 + Added custom php.ini file (custom.ini) to docker basic setup in order to increase memory_limit.
