@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 1.0.3 (in progress)
 
++ [#26](https://github.com/luyadev/luya-kickstarter/issues/26) Move to LUYA admin module version 1.2.
+
 ## 1.0.2 (15. May 2018)
 
 + [#24](https://github.com/luyadev/luya-kickstarter/issues/24) Switch back to 1.0 testsuite.
