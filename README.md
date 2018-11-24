@@ -18,7 +18,7 @@
 
 We have a made an absolut easy to understand *STEP-BY-STEP* Guide to install LUYA:
 
-+ [How to install](https://luya.io)
++ [How to install](https://luya.io/guide/install)
 + [Video Tutorials](https://luya.io/videos)
 + [How to upgrade current website](https://luya.io/guide/install-upgrade)
 
