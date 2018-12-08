@@ -1,13 +1,48 @@
+# "-Indexes" will have Apache block users from browsing folders without a default document
+# Usually you should leave this activated, because you shouldn't allow everybody to surf through
+# every folder on your server (which includes rather private places like CMS system folders).
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteCond %{SCRIPT_FILENAME} -d
+  RewriteCond %{SCRIPT_FILENAME} -f
+  RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+# Block access to backup and source files
+# This files may be left by some text/html editors and
+# pose a great security danger, when someone can access them
+<FilesMatch "(\.(bak|bat|config|sql|fla|md|psd|ini|log|sh|inc|swp|dist)|~|init|composer\.json|composer\.lock)$">
+  Order allow,deny
+  Deny from all
+  Satisfy All
+</FilesMatch>
+
+# Increase cookie security
+<IfModule php5_module>
+  php_value session.cookie_httponly true
+</IfModule>
+
+# Settings to hide index.php and ensure pretty urls
+RewriteEngine on
+
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# otherwise forward it to index.php
+RewriteRule . index.php
+
+
+## -------------------------
 Options +FollowSymLinks
 IndexIgnore */*
 RewriteEngine on
 
 SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0 # php-fastci support
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}] # php-fpm support
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . index.php
 
 <IfModule mod_expires.c>
 	ExpiresActive on
@@ -20,3 +55,6 @@ RewriteRule . index.php
 	ExpiresByType text/css "access plus 1 months"
 	ExpiresDefault "access plus 7 days"
 </IfModule>
+
+
+
