@@ -11,7 +11,7 @@ ResourcesAsset::register($this);
 $this->beginPage();
 ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->composition->language; ?>">
+<html lang="<?= Yii::$app->composition->langShortCode; ?>">
     <head>
         <meta charset="UTF-8" />
         <meta name="robots" content="index, follow" />
