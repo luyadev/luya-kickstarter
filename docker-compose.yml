@@ -12,7 +12,7 @@ services:
       - ./docker/env-local-db.php:/app/configs/env-local-db.php
     command: composer install
   luya_php:
-    build: ./docker/luya
+    image: luyadev/luya-docker-php
     volumes:
       - ./:/app
       - ./docker/env.php:/app/configs/env.php

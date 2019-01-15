@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 1.0.4 (in progress)
 
++ [#37](https://github.com/luyadev/luya-kickstarter/issues/37) Use luya-docker-php image.
+
 ## 1.0.3.1 (18. July 2018)
 
 + Enable intl extension for docker.
