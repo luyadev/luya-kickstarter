@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This is the base config. It doesn't hold any informations about the database and is only used for local development.
+ * This is the base config. It doesn't hold any information about the database and is only used for local development.
  * Use env-local-db.php to configure you database.
  */
 
