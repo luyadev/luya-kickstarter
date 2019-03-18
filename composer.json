@@ -29,7 +29,7 @@
                     "runtime" : "0777"
                 }
             ]
-		},
+        },
         "asset-installer-paths": {
             "bower-asset-library": "vendor/bower"
         },
@@ -40,7 +40,7 @@
     "config": {
         "fxp-asset" : {
             "pattern-skip-version": "(-build|-patch)",
-             "installer-paths": {
+            "installer-paths": {
                 "bower-asset-library": "vendor/bower"
             }
         }
