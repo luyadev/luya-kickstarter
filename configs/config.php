@@ -72,6 +72,16 @@ $config->component('db', [
     'password' => '',
 ])->env(Config::ENV_LOCAL);
 
+/*
+config for docker:
+$config->component('db', [
+    'dsn' => 'mysql:host=luya_db;dbname=luya_kickstarter_101',
+    'username' => 'luya',
+    'password' => 'CHANGE_ME',
+    'charset' => 'utf8',
+])->env(Config::ENV_LOCAL);
+*/
+
 $config->component('db', [
     'dsn' => 'mysql:host=localhost;dbname=DB_NAME',
     'username' => '',
