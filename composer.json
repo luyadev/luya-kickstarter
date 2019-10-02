@@ -38,11 +38,14 @@
         }
     },
     "config": {
-        "fxp-asset" : {
-            "pattern-skip-version": "(-build|-patch)",
-            "installer-paths": {
-                "bower-asset-library": "vendor/bower"
-            }
+        "fxp-asset": {
+            "enabled": false
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
 }
