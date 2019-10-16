@@ -6,6 +6,7 @@ In order to read more about upgrading and BC breaks have a look at the [UPGRADE 
 ## 1.0.7
 
 + [#43](https://github.com/luyadev/luya-kickstarter/pull/43) Use new `luya\Config` system to generate configuration arrays.
++ [#44](https://github.com/luyadev/luya-kickstarter/pull/44) Use asset-packagist instead of fxp plugin as assets source.
 
 ## 1.0.6 (26. June 2019)
 

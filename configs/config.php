@@ -5,6 +5,10 @@ use luya\Config;
 $config = new Config('myproject', dirname(__DIR__), [
     'siteTitle' => 'My Project',
     'defaultRoute' => 'cms',
+    'aliases' => [
+        '@bower' => '@vendor/bower-asset',
+        '@npm'   => '@vendor/npm-asset',
+    ],
     'modules' => [
         /*
          * If you have other admin modules (e.g. cmsadmin) then you going to need the admin. The Admin module provides
