@@ -98,4 +98,16 @@ $config->component('cache', [
     'class' => 'yii\caching\FileCache'
 ])->env(Config::ENV_PROD);
 
+// debug and gii on local env
+$config->module('debug', [
+    'class' => 'yii\debug\Module',
+    'allowedIPs' => ['*'],
+])->env(Config::ENV_LOCAL);
+$config->module('gii', [
+    'class' => 'yii\gii\Module',
+    'allowedIPs' => ['*'],
+])->env(Config::ENV_LOCAL);
+
+$config->bootstrap(['debug', 'gii'])->env(Config::ENV_LOCAL);
+
 return $config;
