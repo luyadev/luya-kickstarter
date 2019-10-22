@@ -68,6 +68,7 @@ $config = new Config('myproject', dirname(__DIR__), [
     ]
 ]);
 
+// database config for 
 $config->component('db', [
     'dsn' => 'mysql:host=localhost;dbname=DB_NAME',
     // 'dsn' => 'mysql:host=localhost;dbname=DB_NAME;unix_socket=/Applications/MAMP/tmp/mysql/mysql.sock', // OSX MAMP
@@ -77,12 +78,11 @@ $config->component('db', [
 ])->env(Config::ENV_LOCAL);
 
 /*
-config for docker:
+// docker mysql config
 $config->component('db', [
     'dsn' => 'mysql:host=luya_db;dbname=luya_kickstarter_101',
     'username' => 'luya',
     'password' => 'CHANGE_ME',
-    'charset' => 'utf8',
 ])->env(Config::ENV_LOCAL);
 */
 
