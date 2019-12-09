@@ -68,6 +68,11 @@ $config = new Config('myproject', dirname(__DIR__), [
     ]
 ]);
 
+$config->callback(function() {
+    define('YII_DEBUG', true);
+    define('YII_ENV', 'local');
+})->env(Config::ENV_LOCAL);
+
 // database config for 
 $config->component('db', [
     'dsn' => 'mysql:host=localhost;dbname=DB_NAME',
