@@ -85,9 +85,9 @@ $config->component('db', [
 /*
 // docker mysql config
 $config->component('db', [
-    'dsn' => 'mysql:host=luya_db;dbname=luya_kickstarter_101',
+    'dsn' => 'mysql:host=luya_db;dbname=luya_kickstarter',
     'username' => 'luya',
-    'password' => 'CHANGE_ME',
+    'password' => 'luya',
 ])->env(Config::ENV_LOCAL);
 */
 
