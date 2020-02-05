@@ -5,10 +5,14 @@ services:
     volumes:
       - ./:/app
     command: composer install
+
   luya_php:
     image: luyadev/luya-docker-php
+    expose:
+      - 9000
     volumes:
       - ./:/app
+
   luya_db:
     image: mysql:5.7
     command:
@@ -19,9 +23,37 @@ services:
       MYSQL_DATABASE: luya_kickstarter
       MYSQL_USER: luya
       MYSQL_PASSWORD: luya
+    expose:
+      - 3306
+    ports:
+      - 3366:3306
+    volumes:
+      - kickstarter-db:/var/lib/mysql
+
   luya_web:
     image: luyadev/luya-docker-nginx
     ports:
-      - "8080:80"
+      - 8080:80
     volumes:
       - ./:/app
+#      - ./configs/nginx/conf.d:/etc/nginx/conf.d
+    links:
+      - luya_db
+    depends_on:
+      - luya_php
+      - luya_db
+
+  luya_adminer:
+    image: adminer:4.7.1
+    restart: always
+    ports:
+      - 12080:8080
+    links:
+      - luya_db
+
+networks:
+  kickstarter-luya:
+    driver: local
+
+volumes:
+  kickstarter-db:
