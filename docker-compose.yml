@@ -20,7 +20,7 @@ services:
       MYSQL_USER: luya
       MYSQL_PASSWORD: luya    
     volumes:
-      - mysql-volume:/var/lib/mysql:cached
+      - mysql-volume:/var/lib/mysql
     ports:
       - "3306:3306"
   luya_web:
