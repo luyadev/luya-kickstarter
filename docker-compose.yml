@@ -18,10 +18,17 @@ services:
       MYSQL_ROOT_PASSWORD: luya
       MYSQL_DATABASE: luya_kickstarter
       MYSQL_USER: luya
-      MYSQL_PASSWORD: luya
+      MYSQL_PASSWORD: luya    
+    volumes:
+      - mysql-volume:/var/lib/mysql
+    ports:
+      - "3306:3306"
   luya_web:
     image: luyadev/luya-docker-nginx
     ports:
       - "8080:80"
     volumes:
       - ./:/app
+
+volumes:
+  mysql-volume:
