@@ -10,10 +10,7 @@ $config = new Config('myproject', dirname(__DIR__), [
         '@npm'   => '@vendor/npm-asset',
     ],
     'modules' => [
-        /*
-         * If you have other admin modules (e.g. cmsadmin) then you going to need the admin. The Admin module provides
-         * a lot of functionality, like storage, user, permission, crud, etc.
-         */
+        // See all options: https://luya.io/api/luya-admin-Module
         'admin' => [
             'class' => 'luya\admin\Module',
             'secureLogin' => false, // when enabling secure login, the mail component must be proper configured otherwise the auth token mail will not send.
@@ -21,25 +18,23 @@ $config = new Config('myproject', dirname(__DIR__), [
             'interfaceLanguage' => 'en', // Admin interface default language.
             'autoBootstrapQueue' => true, // Enables the fake cronjob by default, read more about queue/scheduler: https://luya.io/guide/app-queue
         ],
-        // Frontend module for the `cms` module.
+        // See all frontend CMS options: https://luya.io/api/luya-cms-frontend-Module
         'cms' => [
             'class' => 'luya\cms\frontend\Module',
             'contentCompression' => true, // compressing the cms output (removing white spaces and newlines)
         ],
-        // Admin module for the `cms` module.
+        // See all admin CMS options: https://luya.io/api/luya-cms-admin-Module
         'cmsadmin' => [
             'class' => 'luya\cms\admin\Module',
         ],
     ],
     'components' => [
+        // https://www.yiiframework.com/doc/api/2.0/yii-db-connection
         'db' => [
             'class' => 'yii\db\Connection',
             'charset' => 'utf8',
         ],
-        /*
-         * Add your smtp connection to the mail component to send mails (which is required for secure login), you can test your
-         * mail component with the luya console command ./vendor/bin/luya health/mailer.
-         */
+        // https://luya.io/guide/luya-mail
         'mail' => [
             'isSMTP' => false,
             'from' => 'test@luya.io',
@@ -51,14 +46,14 @@ $config = new Config('myproject', dirname(__DIR__), [
          *
          * hidden: (boolean) If this website is not multi lingual you can hide the composition, other whise you have to enable this.
          * default: (array) Contains the default setup for the current language, this must match your language system configuration.
+         * 
+         * see https://luya.io/guide/concept-composition
          */
         'composition' => [
             'hidden' => true, // no languages in your url (most case for pages which are not multi lingual)
             'default' => ['langShortCode' => 'en'], // the default language for the composition should match your default language shortCode in the language table.
         ],
-        /*
-    	 * Translation component. If you don't have translations just remove this component and the folder `messages`.
-    	 */
+        // I18n Guide https://www.yiiframework.com/doc/guide/2.0/en/tutorial-i18n
         'i18n' => [
             'translations' => [
                 'app*' => [
@@ -69,51 +64,55 @@ $config = new Config('myproject', dirname(__DIR__), [
     ]
 ]);
 
-$config->callback(function() {
-    define('YII_DEBUG', true);
-    define('YII_ENV', 'local');
-})->env(Config::ENV_LOCAL);
+/************ LOCAL ************/
 
-// database config for 
-$config->component('db', [
-    'dsn' => 'mysql:host=localhost;dbname=DB_NAME',
+$config->env(Config::ENV_LOCAL, function(Config $config) {
+    // ensure Yii constants are set correctly
+    $config->callback(function() {
+        define('YII_DEBUG', true);
+        define('YII_ENV', 'local');
+    });
+    
+    // Some example for MAMP on OSX, Windows or by default with Docker
+    // 'dsn' => 'mysql:host=localhost;dbname=DB_NAME',
     // 'dsn' => 'mysql:host=localhost;dbname=DB_NAME;unix_socket=/Applications/MAMP/tmp/mysql/mysql.sock', // OSX MAMP
     // 'dsn' => 'mysql:host=localhost;dbname=DB_NAME;unix_socket=/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock', // OSX XAMPP
-    'username' => '',
-    'password' => '',
-])->env(Config::ENV_LOCAL);
+    $config->component('db', [
+        'dsn' => 'mysql:host=luya_db;dbname=luya_kickstarter',
+        'username' => 'luya',
+        'password' => 'luya',
+    ]);
+    
+    // Yii Debug Toolbar
+    // Info: When working with yii\web\Users configuration and the Debug Toolbar is enabled, it will logout the admin users)
+    // @see https://github.com/luyadev/luya/issues/1854
+    $config->module('debug', [
+        'class' => 'yii\debug\Module',
+        'allowedIPs' => ['*'],
+    ]));
+    $config->module('gii', [
+        'class' => 'yii\gii\Module',
+        'allowedIPs' => ['*'],
+    ]);
+    // bootstrap debug and gii
+    $config->bootstrap(['debug', 'gii']);
+});
 
-/*
-// docker mysql config
-$config->component('db', [
-    'dsn' => 'mysql:host=luya_db;dbname=luya_kickstarter',
-    'username' => 'luya',
-    'password' => 'luya',
-])->env(Config::ENV_LOCAL);
-*/
+/************ PROD ************/
 
-$config->component('db', [
-    'dsn' => 'mysql:host=localhost;dbname=DB_NAME',
-    'username' => '',
-    'password' => '',
-    'enableSchemaCache' => true,
-    'schemaCacheDuration' => 0,
-])->env(Config::ENV_PROD);
-
-$config->component('cache', [
-    'class' => 'yii\caching\FileCache'
-])->env(Config::ENV_PROD);
-
-// debug and gii on local env
-$config->module('debug', [
-    'class' => 'yii\debug\Module',
-    'allowedIPs' => ['*'],
-])->env(Config::ENV_LOCAL);
-$config->module('gii', [
-    'class' => 'yii\gii\Module',
-    'allowedIPs' => ['*'],
-])->env(Config::ENV_LOCAL);
-
-$config->bootstrap(['debug', 'gii'])->env(Config::ENV_LOCAL);
+$config->env(Config::ENV_LOCAL, function(Config $config) {
+    // database setup
+    $config->component('db', [
+        'dsn' => 'mysql:host=localhost;dbname=DB_NAME',
+        'username' => '',
+        'password' => '',
+        'enableSchemaCache' => true,
+        'schemaCacheDuration' => 0,
+    ]);
+    // caching
+    $config->component('cache', [
+        'class' => 'yii\caching\FileCache'
+    ]);
+});
 
 return $config;
