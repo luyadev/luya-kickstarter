@@ -100,7 +100,7 @@ $config->env(Config::ENV_LOCAL, function(Config $config) {
 
 /************ PROD ************/
 
-$config->env(Config::ENV_LOCAL, function(Config $config) {
+$config->env(Config::ENV_PROD, function(Config $config) {
     // database setup
     $config->component('db', [
         'dsn' => 'mysql:host=localhost;dbname=DB_NAME',
