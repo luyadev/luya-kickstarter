@@ -89,7 +89,7 @@ $config->env(Config::ENV_LOCAL, function(Config $config) {
     $config->module('debug', [
         'class' => 'yii\debug\Module',
         'allowedIPs' => ['*'],
-    ]));
+    ]);
     $config->module('gii', [
         'class' => 'yii\gii\Module',
         'allowedIPs' => ['*'],
