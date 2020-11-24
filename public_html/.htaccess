@@ -18,5 +18,4 @@ RewriteRule . index.php
 	ExpiresByType text/javascript "access plus 1 months"
 	ExpiresByType application/x-javascript "access plus 1 months"
 	ExpiresByType text/css "access plus 1 months"
-	ExpiresDefault "access plus 7 days"
 </IfModule>
