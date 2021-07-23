@@ -9,6 +9,7 @@
 [![License](https://poser.pugx.org/luyadev/luya-kickstarter/license)](https://packagist.org/packages/luyadev/luya-kickstarter)
 [![Slack Support](https://img.shields.io/badge/Slack-luyadev-yellowgreen.svg)](https://slack.luya.io/)
 
+> **Attention:** This template still uses Bootstrap 3. You can find a newer Bootstrap 4 based kickstarter template [here](https://github.com/luyadev/luya-kickstarter-bootstrap4).
 
 [LUYA](https://github.com/luyadev/luya) is a [Yii 2 PHP Framework](https://github.com/yiisoft/yii2) wrapper which provides out of the box functions like an **administration interface**, a beautiful looking **content management system**, **payment** modules, **agency workflows** and other tools to develop your website pretty fast!
 
