@@ -4,9 +4,8 @@
     "type": "luya-kickstarter",
     "license":"MIT",
     "require": {
-        "luyadev/luya-core" : "^1.0",
-        "luyadev/luya-module-admin" : "^3.0",
-        "luyadev/luya-module-cms" : "^3.0",
+        "luyadev/luya-module-admin" : "^4.0",
+        "luyadev/luya-module-cms" : "^4.0",
         "luyadev/luya-bootstrap3" : "^1.0",
         "luyadev/luya-generic" : "^1.0"
     },
