@@ -5,8 +5,8 @@ use luya\cms\widgets\LangSwitcher;
 
 ResourcesAsset::register($this);
 
-/* @var $this luya\web\View */
-/* @var $content string */
+/** @var luya\web\View $this */
+/** @var string $content */
 
 $this->beginPage();
 ?>
