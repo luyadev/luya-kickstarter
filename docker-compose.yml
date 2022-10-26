@@ -23,5 +23,7 @@ services:
     image: luyadev/luya-docker:nginx-fpm-php74
     volumes:
       - ./:/app
+    ports:
+      - "8080:80"
 volumes:
   mysql-volume:
