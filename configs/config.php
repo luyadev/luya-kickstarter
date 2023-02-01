@@ -5,6 +5,7 @@ use luya\Config;
 $config = new Config('myproject', dirname(__DIR__), [
     'siteTitle' => 'My Project',
     'defaultRoute' => 'cms',
+    'ensureSecureConnection' => true,
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -17,6 +18,7 @@ $config = new Config('myproject', dirname(__DIR__), [
             'strongPasswordPolicy' => false, // If enabled, the admin user passwords require strength input with special chars, lower, upper, digits and numbers
             'interfaceLanguage' => 'en', // Admin interface default language.
             'autoBootstrapQueue' => true, // Enables the fake cronjob by default, read more about queue/scheduler: https://luya.io/guide/app-queue
+            'logoutOnUserIpChange' => true,
         ],
         // See all frontend CMS options: https://luya.io/api/luya-cms-frontend-Module
         'cms' => [
